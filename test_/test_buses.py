@@ -7,12 +7,11 @@ from Data.reading_object import ReadExcel
 from Library.config import Config
 
 class Test_buses:
-    read_xl = ReadExcel()
-    data = read_xl.read_test_data(Config.read_test_data)
-    # @pytest.mark.parametrize("from_search,to_search,login_no,email,mobile,name,age",[("Bangalore","Gulbarga",7330766460,"revathi@gmail.com",7330766460,"Yugeshwar Reddy",21),("123","Gulbarga","aqed","123","abc",123,100)])
-    @pytest.mark.parametrize("from_search,to_search,login_no,email,mobile,name,age",data)
+    # read_xl = ReadExcel()
+    # data = read_xl.read_test_data(Config.read_test_data)
+    @pytest.mark.parametrize("from_search,to_search,login_no,email,mobile,name,age",[("Bangalore","Gulbarga",7330766460,"revathi@gmail.com",7330766460,"Yugeshwar Reddy",21),("123","Gulbarga","aqed","123","abc",123,100)])
+    # @pytest.mark.parametrize("from_search,to_search,login_no,email,mobile,name,age",data)
     def test_buses(self,_driver,from_search,to_search,login_no,email,mobile,name,age):
-    # def test_buses(self,_driver,from_,to_,login_no,email,mobile,name,age):
         result = Bus(_driver)
         result.searchFrom(from_search)
         time.sleep(2)
